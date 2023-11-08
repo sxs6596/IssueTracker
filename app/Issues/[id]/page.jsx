@@ -28,7 +28,7 @@ const IssueDetailsPage = async ({params}) => {
         <Box>
           <Button>
 
-            <Link href={`Issues/${issue.id}/edit`}>Edit Issues</Link>
+            <Link href={`${issue.id}/edit`}>Edit Issues</Link>
           </Button>
         </Box>
         </Grid>
