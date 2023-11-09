@@ -24,3 +24,21 @@ export async function PATCH(NextRequest, { params }) {
   });
   return NextResponse.json(updatedIssue, { status: 200 });
 }
+
+export async function DELETE(NextRequest,{params}){
+  const id = params.id;
+  // find the issue in the database using prisma. 
+  const issue = await prisma.issue.findUnique({
+    where:{
+      id:parseInt(id)
+    }
+  })
+  if(!issue) NextResponse.json({error:"Invalid Issue"},{status:404})
+  // delete the issue from the database using prisma.
+  const deletedIssue = await prisma.issue.delete({
+    where:{
+      id:parseInt(id)
+    }
+  }); 
+  return NextResponse.json(deletedIssue,{status:200}); 
+}
