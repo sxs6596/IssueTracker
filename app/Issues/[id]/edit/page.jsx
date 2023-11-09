@@ -6,6 +6,7 @@ const EditIssueForm = async({params}) => {
     const issue = await prisma.issue.findUnique({
         where:{id:parseInt(id)}
     }); 
+    console.log(`issue we are sending is :${issue.id}`);
 
   return (
     <div>

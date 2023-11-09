@@ -21,19 +21,28 @@ const IssueForm = (props) => {
   const router = useRouter();
   return (
     <form className="max-w-xl space-y-3" onSubmit={handleSubmit(async(data)=>{
+      try{
       setSubmitting(true);
-      const response  = await axios.post('/api/issues', data);
-      if(response.status === 201){
-        // setSubmitting(false);
-        router.push('/Issues')
+      console.log('data submitted is:', data);
+      if(issue){
+        await axios.patch('/api/issues/'+issue.id, data);
+        console.log(`data submitted is :${data}`); 
+        
+      }else{
+        await axios.post('/api/issues', data);
       }
+      router.push('/Issues');
+    }catch(error){
+      setSubmitting(false);
+      console.log(error); 
+    }
     })}>
         <h3>Edit Issue Form For Issue {issue.id}</h3>
         <TextField.Root>
-        <TextField.Input placeholder="Insert the new issue Title..." value={issue.title} {...register('title')}/>
+        <TextField.Input placeholder={issue.title}  {...register('title')}/>
         </TextField.Root>
         {errors.title && <p color="red">{errors.title.message}</p>}
-        <TextArea placeholder="Reply to comment…" value={issue.description} {...register('description')}/>
+        <TextArea placeholder={issue.description}  {...register('description')}/>
         {errors.description && <p color="red">{errors.description.message}</p>}
         <Button type="submit">Submit {submitting && <Spinner/>}</Button>
     </form>
