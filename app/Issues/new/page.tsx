@@ -30,6 +30,7 @@ const NewIssueForm = () => {
       if(response.status === 201){
         // setSubmitting(false);
         router.push('/Issues')
+        router.refresh();
       }
     })}>
         <h3>New Issues Creation NewIssueForm</h3>

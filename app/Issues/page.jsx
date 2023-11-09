@@ -42,5 +42,5 @@ const Issues = async() => {
     </div>
   );
 };
-
+export const revalidate = 0;
 export default Issues;
