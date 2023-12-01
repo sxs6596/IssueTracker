@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import Navbar from './Navbar';
 const inter = Inter({ subsets: ['latin'] })
 import { Container, Theme } from '@radix-ui/themes';
+import AuthProvider from './auth/Provider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <AuthProvider>
          <Theme>
          <Navbar/>
          <main className="p-5">
@@ -27,6 +29,7 @@ export default function RootLayout({
           </Container>
           </main>
           </Theme>
+          </AuthProvider>
       </body>
     </html>
   )

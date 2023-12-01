@@ -5,6 +5,7 @@ import {Penclil2Icon} from "@radix-ui/react-icons";
 import { notFound } from 'next/navigation'
 import DeleteIssueComponent from "./DeleteIssueComponent";
 import Link from "next/link";
+import AssigneeSelect from "./AssigneeSelect";
 const IssueDetailsPage = async ({params}) => {
   const id = params.id
   const issue = await prisma.issue.findUnique({
@@ -28,6 +29,7 @@ const IssueDetailsPage = async ({params}) => {
         </Box>
         <Box>
           <Flex gap="3" className="my-2" direction="column">
+           <AssigneeSelect/>
           <Button>
             <Link href={`${issue.id}/edit`}>Edit Issues</Link>
           </Button>
