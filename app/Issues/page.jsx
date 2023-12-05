@@ -6,18 +6,9 @@ import delay from "delay";
 import prisma from "@/prisma/client";
 import StatusBadge from "../../app/components/StatusBadge";
 import NewIssueButton from "./NewIssueButton";
+import PaginationComponent from "../components/PaginationComponent";
 
 const Issues = async ({ searchParams }) => {
-  console.log(`searchParams is ${searchParams.status}`);
-  // const statuses = Object.values(Status);
-  // const status = statuses.includes(searchParams.status) ? searchParams.status : undefined;
-  const issues = await prisma.issue.findMany({
-    where: {
-      status: searchParams.status,
-    },
-  });
-  await delay(2000);
-  // declare the columns for the table.
   const columns = [
     { label: "Title", value: "title", className: "" },
     { label: "Status", value: "status", className: "hidden md:table-cell" },
@@ -27,6 +18,34 @@ const Issues = async ({ searchParams }) => {
       className: "hidden md:table-cell",
     },
   ];
+  console.log(`searchParams is ${searchParams.status}`);
+  // const statuses = Object.values(Status);
+  // const status = statuses.includes(searchParams.status) ? searchParams.status : undefined;
+  const orderBy = columns
+    .map((column) => column.value)
+    .includes(searchParams.orderBy)
+    ? { [searchParams.orderBy]: "asc" }
+    : undefined;
+  const page = parseInt(searchParams.page) || 1;
+  const pageSize = 10; 
+  const issuesCount = await prisma.issue.count({
+    where:{
+      status : searchParams.status
+    }
+  })
+  const issues = await prisma.issue.findMany({
+    where: {
+      status: searchParams.status,
+    },
+    orderBy,
+    skip: (page - 1) * 10,
+    take: pageSize,
+  });
+  await delay(2000);
+
+  
+  // declare the columns for the table.
+  
   return (
     <div>
       <h1>Issues Component</h1>
@@ -46,9 +65,10 @@ const Issues = async ({ searchParams }) => {
                 >
                   {column.label}
                 </Link>
-                {column.value === searchParams.orderBy && <ArrowUpIcon className="inline" gap="2"/>}
+                {column.value === searchParams.orderBy && (
+                  <ArrowUpIcon className="inline" gap="2" />
+                )}
               </Table.ColumnHeaderCell>
-              
             ))}
 
             {/* <Table.ColumnHeaderCell>Title</Table.ColumnHeaderCell>
@@ -76,6 +96,7 @@ const Issues = async ({ searchParams }) => {
           ))}
         </Table.Body>
       </Table.Root>
+      <PaginationComponent itemsCount={issuesCount} pageSize={pageSize} currentPage={page}/>
     </div>
   );
 };
