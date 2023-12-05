@@ -29,7 +29,7 @@ const IssueDetailsPage = async ({params}) => {
         </Box>
         <Box>
           <Flex gap="3" className="my-2" direction="column">
-           <AssigneeSelect/>
+           <AssigneeSelect issue={issue}/>
           <Button>
             <Link href={`${issue.id}/edit`}>Edit Issues</Link>
           </Button>
