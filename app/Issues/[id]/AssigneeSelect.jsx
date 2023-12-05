@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react';
 import {Select, Text} from '@radix-ui/themes'
 import axios from 'axios';
 import {useQuery} from '@tanstack/react-query'; 
+import toast, {Toaster} from 'react-hot-toast';
 const AssigneeSelect = ({issue}) => {
     const {data :users, isLoading, error} = useQuery({
         queryKey: ['users'],
@@ -14,11 +15,18 @@ const AssigneeSelect = ({issue}) => {
     if(isLoading) return <Text>Loading...</Text>
     if(error) return null;
   return (
+    <>
+    <Toaster/>
     <Select.Root placeholder="...assign" 
     defaultValue={issue.assignedToUserId || ""}
     onValueChange={async (userId)=>{
-           console.log(`selected user id is ${userId}`);
-           axios.patch('/api/issues/'+issue.id,{assignedToUserId:userId || null})
+         
+          try{
+            await axios.patch('/api/issues/'+issue.id,{assignedToUserId:userId || null})
+          }catch(e){
+            toast.error("Invalid User")
+          }
+           
           
     }}>
   <Select.Trigger />
@@ -32,6 +40,7 @@ const AssigneeSelect = ({issue}) => {
     </Select.Group>
   </Select.Content>
 </Select.Root>
+</>
   )
 }
 
