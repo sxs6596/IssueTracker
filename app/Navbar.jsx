@@ -9,7 +9,7 @@ const Navbar = () => {
   const currentPath = usePathname();
   console.log(currentPath);
   const Links = [
-    { label: "Home", href: "/" },
+    { label: "Dashboard", href: "/" },
     { label: "Issues", href: "/Issues" },
   ];
   const { session } = useSession();
