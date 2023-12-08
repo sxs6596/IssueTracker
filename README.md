@@ -34,5 +34,6 @@ For detailed information on usage, configuration, and contributing, please refer
 ## Contact
 
 Feel free to reach out with any questions or feedback. 
-
+-- sxs6596@mavs.uta.edu 
+-- linkedin.com/in/sivasriharsha
 This project is still under development, and we welcome your contributions!
