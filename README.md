@@ -31,9 +31,15 @@ Issue Tracker is a robust and user-friendly application built with Next.js 14 an
 
 For detailed information on usage, configuration, and contributing, please refer to the [Wiki](link-to-wiki) section.
 
+## Output 
+
+### Dashboard screen
+<img width="1470" alt="Screenshot 2023-12-07 at 7 20 22 PM" src="https://github.com/sxs6596/IssueTracker/assets/127999061/62673945-0bc1-4f96-a814-433005e3a831">
+
+
+
 ## Contact
 
 Feel free to reach out with any questions or feedback. 
--- sxs6596@mavs.uta.edu 
--- linkedin.com/in/sivasriharsha
+
 This project is still under development, and we welcome your contributions!
