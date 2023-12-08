@@ -32,16 +32,16 @@ Issue Tracker is a robust and user-friendly application built with Next.js 14 an
 ## Output 
 
 ### Dashboard screen
-<img width="1470" alt="Screenshot 2023-12-07 at 7 20 22 PM" src="https://github.com/sxs6596/IssueTracker/assets/127999061/62673945-0bc1-4f96-a814-433005e3a831">
+<img width="1470" alt="Screenshot 2023-12-07 at 7 54 33 PM" src="https://github.com/sxs6596/IssueTracker/assets/127999061/b1cbb942-6b30-4c17-bcaa-39ce7893ba66">
 
 ### Sign In Page 
-<img width="1469" alt="Screenshot 2023-12-07 at 7 22 21 PM" src="https://github.com/sxs6596/IssueTracker/assets/127999061/f00efcff-6b17-4dbe-b164-9913f6c383b7">
+<img width="1470" alt="Screenshot 2023-12-07 at 7 54 52 PM" src="https://github.com/sxs6596/IssueTracker/assets/127999061/a81fb17e-9c5b-454a-8049-bf1d51a8376d">
 
 ### Issues Page : 
-<img width="1470" alt="Screenshot 2023-12-07 at 7 21 48 PM" src="https://github.com/sxs6596/IssueTracker/assets/127999061/6fa6084f-ab79-454b-bfd2-8ac365e0b20a">
+<img width="1468" alt="Screenshot 2023-12-07 at 7 55 21 PM" src="https://github.com/sxs6596/IssueTracker/assets/127999061/9f19ddaa-eb33-473b-bd5a-2dd584585263">
 
 ### Issue Details Page : 
-<img width="1470" alt="Screenshot 2023-12-07 at 7 23 34 PM" src="https://github.com/sxs6596/IssueTracker/assets/127999061/e74c2c1d-c326-4295-95d2-59e3ab736d61">
+<img width="1470" alt="Screenshot 2023-12-07 at 7 56 05 PM" src="https://github.com/sxs6596/IssueTracker/assets/127999061/829b0436-dab2-46bf-9b37-c34a66905bce">
 
 
 ## Contact
