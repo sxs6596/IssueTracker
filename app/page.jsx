@@ -34,3 +34,8 @@ const page = async ({searchParams}) => {
 }
 
 export default page
+
+export const metadata = {
+  title:"Issues Dashboard", 
+  description:" View a summary of the project issues with analytical capabilities"
+}

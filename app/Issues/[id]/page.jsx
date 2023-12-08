@@ -41,5 +41,19 @@ const IssueDetailsPage = async ({params}) => {
     </div>
   )
 }
-
+export async function generateMetaData({params}){
+  const issue = prisma.issue.findUnique({
+    where:{id:parseInt(params.id)}
+  })
+  return {
+    title:issue.title,
+    description:issue.description
+  }
+}
 export default IssueDetailsPage
+
+
+export const metadata = {
+  title:"Issues Dashboard", 
+  description:" View a summary of the project issues with analytical capabilities"
+}

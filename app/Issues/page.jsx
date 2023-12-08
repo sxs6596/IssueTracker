@@ -101,4 +101,9 @@ const Issues = async ({ searchParams }) => {
   );
 };
 export const revalidate = 0;
+
+export const metadata = {
+  title:"Issues List", 
+  description:" View all list of issues."
+}
 export default Issues;

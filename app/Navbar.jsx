@@ -16,11 +16,11 @@ const Navbar = () => {
   console.log("session is :", session);
   return (
     
-    <nav className="border-b mb-5 px-5 h-14 ">
+    <nav className="border-b mb-5 px-5 h-14 m">
       <Container>
       <Flex justify="between">
-        <Flex gap="3">
-          <Link href="/">Logo</Link>
+        <Flex gap="3" mt="2">
+          {/* <Link href="/">Logo</Link> */}
           <ul className="flex space-x-6 ">
             {Links.map((link) => (
               <Link
@@ -37,14 +37,10 @@ const Navbar = () => {
             ))}
           </ul>
         </Flex>
-        <Box>
-        {session === "Authenticated" && (
+          <Flex gap="3" mt="2">
           <Link href="/api/auth/signout">Signout</Link>
-        )}
-        {session === "Unauthenticated" && (
-          <Link href="/api/auth/signin">Signin</Link>
-        )}
-      </Box>
+          {/* <Link href="/api/auth/signin">Signin</Link> */}
+          </Flex>
       </Flex>
       </Container>
     </nav>

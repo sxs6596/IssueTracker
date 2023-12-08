@@ -45,4 +45,8 @@ const NewIssueForm = () => {
   )
 }
 
+// export const metadata = {
+//   title:"New Issue Form", 
+//   description:" create a new issue."
+// }
 export default NewIssueForm
