@@ -29,6 +29,7 @@ Issue Tracker is a robust and user-friendly application built with Next.js 14 an
 3. Configure your database connection details in `prisma/schema.prisma`.
 4. Run `npm run dev` to start the development server.
 
+
 For detailed information on usage, configuration, and contributing, please refer to the [Wiki](link-to-wiki) section.
 
 ## Output 
@@ -36,6 +37,14 @@ For detailed information on usage, configuration, and contributing, please refer
 ### Dashboard screen
 <img width="1470" alt="Screenshot 2023-12-07 at 7 20 22 PM" src="https://github.com/sxs6596/IssueTracker/assets/127999061/62673945-0bc1-4f96-a814-433005e3a831">
 
+### Sign In Page 
+<img width="1469" alt="Screenshot 2023-12-07 at 7 22 21 PM" src="https://github.com/sxs6596/IssueTracker/assets/127999061/f00efcff-6b17-4dbe-b164-9913f6c383b7">
+
+### Issues Page : 
+<img width="1470" alt="Screenshot 2023-12-07 at 7 21 48 PM" src="https://github.com/sxs6596/IssueTracker/assets/127999061/6fa6084f-ab79-454b-bfd2-8ac365e0b20a">
+
+### Issue Details Page : 
+<img width="1470" alt="Screenshot 2023-12-07 at 7 23 34 PM" src="https://github.com/sxs6596/IssueTracker/assets/127999061/e74c2c1d-c326-4295-95d2-59e3ab736d61">
 
 
 ## Contact
